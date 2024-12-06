@@ -1,0 +1,1 @@
+Die SQL-Abfrage zeigt eine Liste von Usern an, mit dem man sich in MySQL anmelden kann.
