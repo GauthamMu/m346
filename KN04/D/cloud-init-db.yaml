@@ -12,10 +12,12 @@ ssh_pwauth: false
 disable_root: false 
 package_update: true
 packages:
-  - curl 
+  - curl
   - wget
-  - mariadb-server
 runcmd:
+  - sudo apt update
+  - sudo apt install -y mariadb-server
   - sudo mysql -sfu root -e "GRANT ALL ON *.* TO 'admin'@'%' IDENTIFIED BY 'mgvw30-0' WITH GRANT OPTION;"
   - sudo sed -i 's/127.0.0.1/0.0.0.0/g' /etc/mysql/mariadb.conf.d/50-server.cnf
   - sudo systemctl restart mariadb.service
+ 
